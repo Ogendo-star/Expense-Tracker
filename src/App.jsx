@@ -13,9 +13,17 @@ function App() {
     {id:6, description:"Monthly Fare to work", amount:3000, category:"Transport", date:"2025-04-10"}
   ]);
 
+
+  const handleDelete = (id) => {
+    const confirmed = window.confirm("Are you sure?");
+    if (confirmed) {
+      setExpenses(expenses.filter(expense => expense.id !== id));
+    }
+  };
+  
   return (
     <>
-      <ExpenseList items = {expenses}/>
+       <ExpenseList items={expenses} onDelete={handleDelete} />
     </>
   );
 }

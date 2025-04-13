@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ExpenseList = ({items}) => {
+const ExpenseList = ({items, onDelete}) => {
   return (
 
     <table className ="table">
@@ -20,6 +20,11 @@ const ExpenseList = ({items}) => {
     <td>Ksh {item.amount}</td>
     <td>{item.category}</td>
     <td>{item.date}</td>
+    <td>
+      <button className="btn btn-danger btn-sm" onClick={() => onDelete(item.id)}>
+        Delete
+      </button>
+    </td>
   </tr>
 
 ))}
