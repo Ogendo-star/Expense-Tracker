@@ -16,12 +16,20 @@ const ExpenseList = ({items}) => {
 
  {items.map((item) => (
   <tr key={item.id}>
-    <th>{item.description}</th>
+    <td>{item.description}</td>
     <td>Ksh {item.amount}</td>
     <td>{item.category}</td>
     <td>{item.date}</td>
   </tr>
+
 ))}
+<tr>
+    
+<td><h4>TOTAL</h4></td>
+    <td><h4>Ksh{items.reduce((total, item) => total + item.amount, 0).toFixed(2)}</h4></td>
+
+  </tr>
+
       
     </tbody>
 
