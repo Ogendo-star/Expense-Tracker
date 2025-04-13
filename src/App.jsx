@@ -4,20 +4,20 @@ import ExpenseList from './components/ExpenseList'
 
 function App() {
   
-  const [expense, setExpenses] = useState([
-    {id:1, description:"A bale of tissue", Amount: 950,  category:"Toiletries", Date},
-    {id:2, description:"25kg sack of rice", Amount: 3500, category:"Food", Date},
-    {id:3, description:"Bunch of washing soap", Amount: 680, category:"Toiletries", Date},
-    {id:4, description:"Hair retouch", Amount:1500, category:"Personal Care", Date},
-    {id:5, description:"Monthly Premium", Amount:3000, category:"Savings", Date},
-    {id:6, description:"Monthly Fare to work", Amount:3000, category:"Transport", Date},
+  const [expenses, setExpenses] = useState([
+    {id:1, description:"A bale of tissue", amount: 950,  category:"Toiletries", date:"2025-04-10"},
+    {id:2, description:"25kg sack of rice", amount: 3500, category:"Food", date:"2025-04-10"},
+    {id:3, description:"Bunch of washing soap", amount: 680, category:"Toiletries", date:"2025-04-10"},
+    {id:4, description:"Hair retouch", amount:1500, category:"Personal Care", date:"2025-04-10"},
+    {id:5, description:"Monthly Premium", amount:3000, category:"Savings", date:"2025-04-10"},
+    {id:6, description:"Monthly Fare to work", amount:3000, category:"Transport", date:"2025-04-10"}
   ]);
 
   return (
     <>
-      <ExpenseList/>
+      <ExpenseList items = {expenses}/>
     </>
-  )
+  );
 }
 
 export default App

@@ -1,7 +1,8 @@
 import React from 'react'
 
-const ExpenseList = () => {
+const ExpenseList = ({items}) => {
   return (
+
     <table className ="table">
     <thead>
       <tr>
@@ -11,14 +12,17 @@ const ExpenseList = () => {
         <th scope="col">Date</th>
       </tr>
     </thead>
+ <tbody>
 
-    <tbody>
-      <tr>
-        <th>A bale of tissue</th>
-        <td> Ksh 950</td>
-        <td>Toiletries</td>
-        <td>{ClipboardItem.date}</td>
-      </tr>
+ {items.map((item) => (
+  <tr key={item.id}>
+    <th>{item.description}</th>
+    <td>Ksh {item.amount}</td>
+    <td>{item.category}</td>
+    <td>{item.date}</td>
+  </tr>
+))}
+      
     </tbody>
 
   </table>
