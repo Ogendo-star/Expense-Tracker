@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ExpenseList from './components/ExpenseList'
+import ExpenseFilter from './components/ExpenseFilter';
 
 
 function App() {
@@ -21,9 +22,26 @@ function App() {
     }
   };
   
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+const handleSelectCategory = (category) => {
+  setSelectedCategory(category);
+};
+
+const visibleExpenses = selectedCategory 
+    ? expenses.filter(expense => expense.category === selectedCategory)
+    : expenses;
+
   return (
+
     <>
-       <ExpenseList items={expenses} onDelete={handleDelete} />
+       <ExpenseFilter
+  selectedCategory={selectedCategory}
+  onSelectCategory={handleSelectCategory}
+/>
+
+<ExpenseList items={visibleExpenses} onDelete={handleDelete} />
+
     </>
   );
 }

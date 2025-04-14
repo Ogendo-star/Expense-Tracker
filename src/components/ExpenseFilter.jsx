@@ -1,15 +1,20 @@
 import React from 'react'
 
-const ExpenseFilter = () => {
-  return (
-    <select name="" id="" className="form-select">
-        <option value="toiletries">Toiletries</option>
-        <option value="savings">Savings</option>
-        <option value="personal care">Personal care</option>
-        <option value="transport">Tansport</option>
-        <option value="food">Food</option>
-    </select>
-  )
-}
-
+const ExpenseFilter = ({ selectedCategory, onSelectCategory }) => {
+    return (
+      <select
+        className="form-select mb-3"
+        value={selectedCategory}
+        onChange={(e) => onSelectCategory(e.target.value)}
+      >
+        <option value="">All Categories</option>
+        <option value="Toiletries">Toiletries</option>
+        <option value="Savings">Savings</option>
+        <option value="Personal Care">Personal Care</option>
+        <option value="Transport">Transport</option>
+        <option value="Food">Food</option>
+      </select>
+    );
+  };
+  
 export default ExpenseFilter
