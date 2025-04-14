@@ -21,8 +21,7 @@ const ExpenseList = ({items, onDelete}) => {
     <td>{item.category}</td>
     <td>{item.date}</td>
     <td>
-      <button className="btn btn-danger btn-sm" onClick={() => onDelete(item.id)}>
-        Delete
+      <button className="btn btn-outline-danger btn-sm" onClick={() => onDelete(item.id)}>Delete
       </button>
     </td>
   </tr>
