@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ExpenseList from './components/ExpenseList'
 import ExpenseFilter from './components/ExpenseFilter';
+import ExpenseForm from './components/ExpenseForm';
 
 
 function App() {
@@ -35,6 +36,7 @@ const visibleExpenses = selectedCategory
   return (
 
     <>
+    <ExpenseForm/>
        <ExpenseFilter
   selectedCategory={selectedCategory}
   onSelectCategory={handleSelectCategory}
