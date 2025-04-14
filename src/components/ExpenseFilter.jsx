@@ -13,6 +13,8 @@ const ExpenseFilter = ({ selectedCategory, onSelectCategory }) => {
         <option value="Personal Care">Personal Care</option>
         <option value="Transport">Transport</option>
         <option value="Food">Food</option>
+        <option value="groceries">Groceries</option>
+        <option value="datenights">Datenights</option>
       </select>
     );
   };
