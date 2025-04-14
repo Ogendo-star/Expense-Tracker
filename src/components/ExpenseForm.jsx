@@ -4,6 +4,7 @@ const ExpenseForm = () => {
   return (
     <div className="mb-3 w-100 w-md-50 d-flex align-items-center justify-content-center"> 
         <form className="border .flex-column p-3 rounded ">
+            <h2 className = "font-bold text-2xl">Expense Information</h2>
         <label htmlFor="description" className="form-label">Description</label>
             <input id="description" type="text" className="form-control" />
           
