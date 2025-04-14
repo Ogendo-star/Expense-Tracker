@@ -30,7 +30,7 @@ const ExpenseList = ({items, onDelete}) => {
 <tr>
     
 <td><h4>TOTAL</h4></td>
-    <td><h4>Ksh{items.reduce((total, item) => total + item.amount, 0).toFixed(2)}</h4></td>
+    <td><h4>Ksh{items.reduce((total, item) => total + parseInt(item.amount), 0).toFixed(2)}</h4></td>
 
   </tr>
 

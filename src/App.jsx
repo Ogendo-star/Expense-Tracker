@@ -15,6 +15,14 @@ function App() {
     {id:6, description:"Monthly Fare to work", amount:3000, category:"Transport", date:"2025-04-10"}
   ]);
 
+  const addItem = (data) => {
+    setExpenses(prevExpenses => [
+      ...prevExpenses,
+      { id: prevExpenses.length + 1, ...data }
+    ]);
+  };
+  
+
 
   const handleDelete = (id) => {
     const confirmed = window.confirm("Are you sure?");
@@ -36,7 +44,7 @@ const visibleExpenses = selectedCategory
   return (
 
     <>
-    <ExpenseForm/>
+    <ExpenseForm addExpense={addItem}/>
        <ExpenseFilter
   selectedCategory={selectedCategory}
   onSelectCategory={handleSelectCategory}
@@ -47,5 +55,6 @@ const visibleExpenses = selectedCategory
     </>
   );
 }
+
 
 export default App
